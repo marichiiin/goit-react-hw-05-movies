@@ -3,14 +3,15 @@ import PropTypes from 'prop-types';
 import css from './MovieList.module.css';
 
 export const MovieList = ({ movies }) => {
+    console.log(`moviesList ${movies}`);
     return (
         <>
             <ul className={css.movieList}>
-                {movies.map(movie=> (
+                {movies.map(({id, title})=> (
                     <MovieListItem
-                        key={movie.id}
-                        id={movie.id}
-                        title={movie.title}
+                        key={id}
+                        id={id}
+                        title={title}
                     />
                 ))}
             </ul>
